@@ -14,4 +14,4 @@ log = "0.4.14"
 serde_yaml = "0.8.21"
 serde = { version = "1.0.130", features = ["derive"] }
 regex = "1.5.4"
-kalgan_string = { git = "https://github.com/eduardocasas/kalgan-string.git" }
+kalgan_string = { git = "https://github.com/eduardocasas/kalgan-string" }
