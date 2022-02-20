@@ -1,0 +1,12 @@
+routes:
+  - home:
+      path: /
+      controller: home_controller::index
+      methods: get
+  - user:
+      path: /user/{id}
+      controller: user_controller::crud
+      middleware: user_middleware::test
+      methods: get, post, delete, put
+      requirements:
+        id: "^[0-9]+"
