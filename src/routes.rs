@@ -1,6 +1,7 @@
 use log::{debug, error, info, warn};
 use serde::Deserialize;
 use serde_yaml::Value;
+use std::ffi::OsStr;
 use std::{fs, path::Path, vec::Vec};
 
 pub fn generate(source: &str) -> crate::Router {
@@ -42,8 +43,17 @@ fn walk_folder_files(dir: &Path, routes: &mut Vec<crate::Route>) {
                     debug!("{} is dir", path.display());
                     walk_folder_files(&path, routes);
                 } else {
-                    debug!("{} is file", path.display());
-                    get_file_content(&path, routes);
+                    match path.extension().and_then(OsStr::to_str) {
+                        Some(extension) => {
+                            if extension.to_lowercase() == "yaml" {
+                                debug!("{} is file", path.display());
+                                get_file_content(&path, routes);
+                            } else {
+                                debug!("{} is skipped.", path.display());
+                            }
+                        }
+                        None => debug!("{} is skipped.", path.display()),
+                    }
                 }
             }
         }

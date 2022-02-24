@@ -1,6 +1,6 @@
 [package]
 name = "kalgan_router"
-version = "0.9.0"
+version = "0.9.1"
 edition = "2018"
 description = "HTTP routing tool based on routes stored in yaml files used by Kalgan Framework."
 homepage = "https://kalgan.eduardocasas.com"
@@ -14,4 +14,4 @@ log = "0.4.14"
 serde_yaml = "0.8.21"
 serde = { version = "1.0.130", features = ["derive"] }
 regex = "1.5.4"
-kalgan_string = { version = "0.9.0" }
+kalgan_string = { version = "0.9.1" }

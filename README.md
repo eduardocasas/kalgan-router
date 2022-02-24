@@ -57,7 +57,7 @@ assert_eq!(route.get_middleware(), &"".to_string());
 For further information please visit:
 
 * [Official Kalgan Site](https://kalgan.eduardocasas.com)
-* [API Documentation on docs.rs](https://docs.rs/crate/kalgan-router/latest)
+* [API Documentation on docs.rs](https://docs.rs/kalgan-router)
 
 
 ## License
